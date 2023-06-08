@@ -230,8 +230,7 @@ const Dashboard = () => {
                 index = i
             }
         }
-
-        if (index) {
+        if (index > -1) {
             return array[index]
         }
 
