@@ -1,0 +1,40 @@
+version: "2.3"
+
+services:
+  postgres-db:
+    container_name: "postgres"
+    image: postgres
+    environment:
+      POSTGRES_USER: $DATABASE_USERNAME
+      POSTGRES_PASSWORD: $DATABASE_PASSWORD
+      POSTGRES_DB: $DATABASE_NAME
+      # POSTGRES_PASSWORD_FILE: /run/secrets/db_password <-- alternative for POSTGRES_PASSWORD (to use with docker secrets)
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT_CONTAINER}
+    volumes:
+      - ./db-data/postgres-data:/var/lib/postgresql/data/
+    restart: always
+
+  pgadmin:
+    container_name: "pgAdmin4"
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: $PGADMIN_EMAIL
+      PGADMIN_DEFAULT_PASSWORD: $PGADMIN_PASSWORD
+    ports:
+      - ${PGADMIN_PORT}:${PGADMIN_PORT_CONTAINER}
+    volumes:
+      - ./pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres-db
+
+# Uncomment this if you need adminer
+#  adminer:
+#    image: adminer
+#    container_name: adminer
+#    restart: always
+#    depends_on:
+#      - postgres-db
+#    ports:
+#      - '8383:8080'
