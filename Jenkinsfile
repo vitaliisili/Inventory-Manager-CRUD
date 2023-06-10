@@ -1,7 +1,6 @@
 pipeline {
     agent any
 
-    en
     stages {
         stage('Build_React_App'){
             environment {
