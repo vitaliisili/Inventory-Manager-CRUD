@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build_React_App'){
             steps {
-                sh: 'la -a'
+                sh 'ls -a'
                 sh 'cd app-ui'
                 sh 'ls -a'
 //                 sh 'npm install'
