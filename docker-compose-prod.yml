@@ -1,4 +1,4 @@
-version: "2.3"
+version: "3"
 
 services:
   postgres-db:
@@ -11,8 +11,8 @@ services:
       # POSTGRES_PASSWORD_FILE: /run/secrets/db_password <-- alternative for POSTGRES_PASSWORD (to use with docker secrets)
     ports:
       - ${DATABASE_PORT}:${DATABASE_PORT_CONTAINER}
-    volumes:
-      - ./db-data/postgres-data:/var/lib/postgresql/data/
+#    volumes:
+#      - ./db-data/postgres-data:/var/lib/postgresql/data/
     restart: always
 
   pgadmin:
@@ -28,13 +28,3 @@ services:
       - ./pgadmin_data:/var/lib/pgadmin
     depends_on:
       - postgres-db
-
-# Uncomment this if you need adminer
-#  adminer:
-#    image: adminer
-#    container_name: adminer
-#    restart: always
-#    depends_on:
-#      - postgres-db
-#    ports:
-#      - '8383:8080'
