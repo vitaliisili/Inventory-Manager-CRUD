@@ -14,7 +14,7 @@ pipeline {
                 PGADMIN_PASSWORD = credentials('INVE_PGADMIN_PASSWORD')
             }
             steps {
-                sh docker-compose -f docker-compose-dev.yml -d --build
+                sh 'docker-compose -f docker-compose-dev.yml -d --build'
             }
         }
 
