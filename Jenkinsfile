@@ -9,7 +9,6 @@ pipeline {
                 DATABASE_NAME = credentials('INVE_DATABASE_NAME')
                 DATABASE_PORT = credentials('INVE_DATABASE_PORT')
                 DATABASE_HOSTNAME = credentials('INVE_DATABASE_HOSTNAME')
-                DATABASE_HOSTNAME = credentials('INVE_DATABASE_HOSTNAME')
                 PGADMIN_EMAIL = credentials('INVE_PGADMIN_EMAIL')
                 PGADMIN_PASSWORD = credentials('INVE_PGADMIN_PASSWORD')
             }
