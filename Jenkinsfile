@@ -4,11 +4,11 @@ pipeline {
     stages {
         stage('Build_React_App'){
             steps {
-                sh 'ls -a'
-                sh 'cd app-ui'
-                sh 'ls -a'
-//                 sh 'npm install'
-//                 sh 'npm run build'
+//                 sh 'ls -a'
+//                 sh 'cd app-ui'
+//                 sh 'ls -a'
+                sh 'npm install --prefix ./app-ui'
+                sh 'npm --prefix ./app-ui run build'
             }
         }
 
