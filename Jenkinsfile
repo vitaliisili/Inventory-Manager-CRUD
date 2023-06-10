@@ -8,12 +8,7 @@ pipeline {
 
             }
             steps {
-//                 sh 'ls -a'
-//                 sh 'cd app-ui'
-//                 sh 'ls -a'
-//                 sh 'npm install --prefix ./app-ui'
-//                 sh 'npm --prefix ./app-ui run build'
-                   echo '$DATABASE_PASSWORD'
+                sh docker-compose -f docker-compose-dev.yml -d --build
             }
         }
 
