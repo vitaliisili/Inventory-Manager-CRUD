@@ -17,55 +17,55 @@ services:
 #      - postgres-data:/var/lib/postgresql/data/
     restart: always
 
-#  pgadmin:
-#    container_name: "pgAdmin4"
-#    image: dpage/pgadmin4
-#    restart: always
-#    environment:
-#      PGADMIN_DEFAULT_EMAIL: $PGADMIN_EMAIL
-#      PGADMIN_DEFAULT_PASSWORD: $PGADMIN_PASSWORD
-#    ports:
-#      - "5000:5000"
-#    expose:
-#      - 5000
-##    volumes:
-##      - pgadmin_data:/var/lib/pgadmin
-#    depends_on:
-#      - postgres-db
-#
-#  inventory-app:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-#    image: inventory:latest
-#    container_name: inventory
-#    depends_on:
-#      - postgres-db
-#    environment:
-#      DATABASE_PASSWORD: $DATABASE_PASSWORD
-#      DATABASE_USERNAME: $DATABASE_USERNAME
-#      DATABASE_HOSTNAME: $DATABASE_HOSTNAME
-#      DATABASE_PORT: $DATABASE_PORT
-#      DATABASE_NAME: $DATABASE_NAME
-#    restart: on-failure
-#    ports:
-#      - "8000:8000"
-#    expose:
-#      - 8000
-#
-#  inventory-app-ui:
-#    build:
-#      context: ./app-ui
-#      dockerfile: Dockerfile
-#    image: inventory-ui:latest
-#    container_name: inventory-ui
-#    ports:
-#      - "3000:3000"
-#    expose:
-#      - 3000
-#    depends_on:
-#      - inventory-app
-#
+  pgadmin:
+    container_name: "pgAdmin4"
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: $PGADMIN_EMAIL
+      PGADMIN_DEFAULT_PASSWORD: $PGADMIN_PASSWORD
+    ports:
+      - "5000:5000"
+    expose:
+      - 5000
+#    volumes:
+#      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres-db
+
+  inventory-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: inventory:latest
+    container_name: inventory
+    depends_on:
+      - postgres-db
+    environment:
+      DATABASE_PASSWORD: $DATABASE_PASSWORD
+      DATABASE_USERNAME: $DATABASE_USERNAME
+      DATABASE_HOSTNAME: $DATABASE_HOSTNAME
+      DATABASE_PORT: $DATABASE_PORT
+      DATABASE_NAME: $DATABASE_NAME
+    restart: on-failure
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
+
+  inventory-app-ui:
+    build:
+      context: ./app-ui
+      dockerfile: Dockerfile
+    image: inventory-ui:latest
+    container_name: inventory-ui
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    depends_on:
+      - inventory-app
+
 volumes:
-#  pgadmin-data:
+  pgadmin-data:
   postgres-data:
