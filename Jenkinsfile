@@ -2,27 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('Build_React_App'){
+        stage('Build'){
             environment {
-                DATABASE_PASSWORD = credentials('DATABASE_PASSWORD')
-
+                DATABASE_PASSWORD = credentials('IVENT_DATABASE_PASSWORD')
+                DATABASE_USERNAME = credentials('INVE_DATABASE_USERNAME')
+                DATABASE_NAME = credentials('INVE_DATABASE_NAME')
+                DATABASE_PORT = credentials('INVE_DATABASE_PORT')
+                DATABASE_HOSTNAME = credentials('INVE_DATABASE_HOSTNAME')
+                DATABASE_HOSTNAME = credentials('INVE_DATABASE_HOSTNAME')
+                PGADMIN_EMAIL = credentials('INVE_PGADMIN_EMAIL')
+                PGADMIN_PASSWORD = credentials('INVE_PGADMIN_PASSWORD')
             }
             steps {
                 sh docker-compose -f docker-compose-dev.yml -d --build
             }
         }
 
-        stage('Deploy_React_App') {
+        stage('Clear') {
             steps {
-                sh 'echo pass'
+                sh 'docker rmi $(sudo docker images -f "dangling=true" -q) &>/dev/null'
 //                 sh 'sudo rm -rf /var/www/inventory.vitaliisili.com'
 //                 sh 'sudo cp -r ${WORKSPACE}/app-ui/build/ /var/www/inventory.vitaliisili.com'
-            }
-        }
-
-        stage('Build FastApi Docker Image') {
-            steps {
-                sh 'echo docker --version'
             }
         }
     }
