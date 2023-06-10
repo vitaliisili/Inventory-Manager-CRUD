@@ -14,7 +14,7 @@ services:
     expose:
       - 5432
 #    volumes:
-#      - ./db-data/postgres-data:/var/lib/postgresql/data/
+      - postgres-data:/var/lib/postgresql/data/
     restart: always
 
   pgadmin:
@@ -29,14 +29,14 @@ services:
     expose:
       - 5000
     volumes:
-      - ./pgadmin_data:/var/lib/pgadmin
+      - pgadmin_data:/var/lib/pgadmin
     depends_on:
       - postgres-db
 
   inventory-app:
     build:
       context: .
-      dockerfile: app/Dockerfile
+      dockerfile: ./app/Dockerfile
     image: inventory:latest
     container_name: inventory
     depends_on:
