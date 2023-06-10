@@ -34,7 +34,7 @@ services:
   inventory-app:
     build:
       context: .
-      dockerfile: app/Dockerfile
+      dockerfile: Dockerfile
     image: inventory:latest
     container_name: inventory
     depends_on:
