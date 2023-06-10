@@ -10,7 +10,7 @@ services:
       POSTGRES_DB: $DATABASE_NAME
       # POSTGRES_PASSWORD_FILE: /run/secrets/db_password <-- alternative for POSTGRES_PASSWORD (to use with docker secrets)
     ports:
-      - "5432:5432"
+      - "5453:5432"
     expose:
       - 5432
 #    volumes:
@@ -45,7 +45,7 @@ services:
       DATABASE_PASSWORD: $DATABASE_PASSWORD
       DATABASE_USERNAME: $DATABASE_USERNAME
       DATABASE_HOSTNAME: $DATABASE_HOSTNAME
-      DATABASE_PORT: $DATABASE_PORT
+#      DATABASE_PORT: $DATABASE_PORT
       DATABASE_NAME: $DATABASE_NAME
     restart: on-failure
     ports:
