@@ -17,7 +17,7 @@ pipeline {
         }
 
         stage("Build FastApi Docker Image") {
-            step {
+            steps {
                 sh "echo docker --version"
             }
         }
