@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build React App')
+        stage('Build_React_App')
             steps {
                 sh 'cd app-ui'
                 sh 'npm install'
                 sh 'npm run build'
             }
 
-        stage('Deploy React App') {
+        stage('Deploy_React_App') {
             steps {
                 sh 'sudo rm -rf /var/www/inventory.vitaliisili.com'
                 sh 'sudo cp -r ${WORKSPACE}/app-ui/build/ /var/www/inventory.vitaliisili.com'
