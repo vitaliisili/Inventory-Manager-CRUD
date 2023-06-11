@@ -62,7 +62,7 @@ services:
     image: inventory-ui:latest
     container_name: inventory-ui
     environment:
-      REACT_APP_BACKEND_URL: $BACKEND_URL
+      REACT_APP_BACKEND_URL: $REACT_APP_BACKEND_URL
     ports:
       - "3000:3000"
     expose:
