@@ -5,13 +5,6 @@ from .controller import protuct_controller
 app = FastAPI()
 app.include_router(protuct_controller.router)
 
-
-# origins = [
-#     "http://localhost:3000"
-#     "https://inventoryapi.vitaliisili.com",
-# ]
-
-
 origins = ["*"]
 
 app.add_middleware(
