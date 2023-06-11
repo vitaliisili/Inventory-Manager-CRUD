@@ -5,9 +5,15 @@ from .controller import protuct_controller
 app = FastAPI()
 app.include_router(protuct_controller.router)
 
+
+origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*']
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # origins = [
