@@ -5,20 +5,25 @@ from .controller import protuct_controller
 app = FastAPI()
 app.include_router(protuct_controller.router)
 
-origins = [
-    "http://localhost:3000",
-    "http://localhost:8000",
-    "http://vitaliisili.com:3000",
-    "https://vitaliisili.com:3000",
-    "https://vitaliisili.com",
-    "http://vitaliisili.com",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=['*']
 )
+
+# origins = [
+#     "http://localhost:3000",
+#     "http://localhost:8000",
+#     "http://vitaliisili.com:3000",
+#     "https://vitaliisili.com:3000",
+#     "https://vitaliisili.com",
+#     "http://vitaliisili.com",
+# ]
+#
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=origins,
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
