@@ -7,8 +7,11 @@ app.include_router(protuct_controller.router)
 
 origins = [
     "http://localhost:3000",
+    "http://localhost:8000",
     "http://vitaliisili.com:3000",
     "https://vitaliisili.com:3000",
+    "https://vitaliisili.com",
+    "http://vitaliisili.com",
 ]
 
 app.add_middleware(

@@ -25,9 +25,11 @@ services:
       PGADMIN_DEFAULT_EMAIL: $PGADMIN_EMAIL
       PGADMIN_DEFAULT_PASSWORD: $PGADMIN_PASSWORD
     ports:
-      - "5000:5000"
+      - "5000:80"
+      - "5001:443"
     expose:
       - 5000
+      - 5001
 #    volumes:
 #      - pgadmin_data:/var/lib/pgadmin
     depends_on:
