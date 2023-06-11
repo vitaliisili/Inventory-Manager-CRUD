@@ -1,6 +1,6 @@
 // const PORT = "8000"
-const dotenv = require("dotenv")
-dotenv.config()
+// const dotenv = require("dotenv")
+// dotenv.config()
 const API_VERSION = 'api'
 // const HOST = `http://localhost:${PORT}/${API_VERSION}` // API host server url
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL
