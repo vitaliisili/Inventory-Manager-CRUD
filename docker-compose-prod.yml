@@ -31,7 +31,7 @@ services:
       - 5000
       - 5001
     volumes:
-      - pgadmin_data:/var/lib/pgadmin
+      - pgadmin-data:/var/lib/pgadmin
     depends_on:
       - postgres-db
 
