@@ -24,12 +24,16 @@ async def get_products(page: int = 1, size: int = 0, search: Optional[str] = "",
 @router.get("/api/products/total-value", response_model=product_schemas.ProductTotal)
 async def get_total_product_value(db: Session = Depends(get_db)):
     total = db.query(functions.sum(product_model.Product.price).label("total_value")).first()
+    if total[0] is None:
+        return {'total_value': 0}
     return total
 
 
 @router.get("/api/products/total-items", response_model=product_schemas.ProductTotalItems)
 async def get_total_product_value(db: Session = Depends(get_db)):
     total = db.query(functions.sum(product_model.Product.quantity).label("total_items")).first()
+    if total[0] is None:
+        return {'total_items': 0}
     return total
 
 
