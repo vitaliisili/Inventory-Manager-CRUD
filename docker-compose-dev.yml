@@ -58,7 +58,7 @@ services:
     image: inventory-ui:latest
     container_name: inventory-ui
     environment:
-      REACT_APP_API_HOST: inventory-app
+      REACT_APP_BACKEND_URL: localhost:8000
     ports:
       - "3000:3000"
     depends_on:
