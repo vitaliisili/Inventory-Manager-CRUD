@@ -7,6 +7,7 @@
 
 const API_VERSION = 'api'
 // const HOST = `http://localhost:${PORT}/${API_VERSION}` // API host server url
+// https://inventoryapi.vitaliisili.com
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL
 console.log("//////////////////")
 console.log(BACKEND_URL)
