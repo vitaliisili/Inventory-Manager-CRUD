@@ -11,7 +11,6 @@ pipeline {
                 DATABASE_HOSTNAME = credentials('INVE_DATABASE_HOSTNAME')
                 PGADMIN_EMAIL = credentials('INVE_PGADMIN_EMAIL')
                 PGADMIN_PASSWORD = credentials('INVE_PGADMIN_PASSWORD')
-                REACT_APP_BACKEND_URL='https://inventoryapi.vitaliisili.com'
             }
             steps {
                 sh 'docker-compose -f docker-compose-prod.yml up -d --build'

@@ -1,5 +1,6 @@
 const API_VERSION = 'api'
-const HOST = `http://localhost:8000/${API_VERSION}` // API host server url
+// const HOST = `http://localhost:8000/${API_VERSION}` // API host server url
+const HOST = `https://inventoryapi.vitaliisili.com/${API_VERSION}` // API host server url
 
 export const API_GET_ALL_PRODUCTS = `${HOST}/products`
 export const API_GET_PRODUCT_BY_ID = `${HOST}/products/{0}`
