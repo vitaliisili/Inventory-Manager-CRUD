@@ -8,6 +8,9 @@
 [![Generic badge](https://img.shields.io/badge/Made_with-React_Js-blue.svg)](https://shields.io/)
 
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,docker,jenkins,react,fastapi,python,postgres,linux,nginx,nodejs,stackoverflow)](https://skillicons.dev)
+
+## Live Demo [Click Here](https://inventory.vitaliisili.com/products)
+
 ### Project Description:
 
 *The objective of this project is to develop a simple inventory management system for a store.
