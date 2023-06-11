@@ -1,18 +1,10 @@
-// const PORT = "8000"
-// const dotenv = require("dotenv")
-// dotenv.config()
-// require("dotenv").config()
-// dotenv.config()
-// import dotenv from 'dotenv'
-
 const API_VERSION = 'api'
-// const HOST = `http://localhost:${PORT}/${API_VERSION}` // API host server url
 // https://inventoryapi.vitaliisili.com
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL
 console.log("//////////////////")
 console.log(BACKEND_URL)
 console.log("//////////////////")
-const HOST = `https://inventoryapi.vitaliisili.com/${API_VERSION}` // API host server url
+const HOST = `${BACKEND_URL}/${API_VERSION}` // API host server url
 
 export const API_GET_ALL_PRODUCTS = `${HOST}/products`
 export const API_GET_PRODUCT_BY_ID = `${HOST}/products/{0}`
