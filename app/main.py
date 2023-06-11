@@ -16,20 +16,3 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# origins = [
-#     "http://localhost:3000",
-#     "http://localhost:8000",
-#     "http://vitaliisili.com:3000",
-#     "https://vitaliisili.com:3000",
-#     "https://vitaliisili.com",
-#     "http://vitaliisili.com",
-# ]
-#
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-
