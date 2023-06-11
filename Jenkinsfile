@@ -11,7 +11,7 @@ pipeline {
                 DATABASE_HOSTNAME = credentials('INVE_DATABASE_HOSTNAME')
                 PGADMIN_EMAIL = credentials('INVE_PGADMIN_EMAIL')
                 PGADMIN_PASSWORD = credentials('INVE_PGADMIN_PASSWORD')
-                BACKEND_URL = credentials('BACKEND_URL')
+                REACT_APP_BACKEND_URL = credentials('BACKEND_URL')
             }
             steps {
                 sh 'docker-compose -f docker-compose-prod.yml up -d --build'
