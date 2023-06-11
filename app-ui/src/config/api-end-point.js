@@ -1,10 +1,5 @@
 const API_VERSION = 'api'
-// https://inventoryapi.vitaliisili.com
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL
-console.log("//////////////////")
-console.log(BACKEND_URL)
-console.log("//////////////////")
-// const HOST = `${BACKEND_URL}/${API_VERSION}` // API host server url
 const HOST = `${BACKEND_URL}/${API_VERSION}` // API host server url
 
 export const API_GET_ALL_PRODUCTS = `${HOST}/products`
