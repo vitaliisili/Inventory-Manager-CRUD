@@ -12,6 +12,8 @@ FROM node:latest as build
 # set working directory
 WORKDIR /app
 # add `/app/node_modules/.bin` to $PATH
+#ARG REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL
+#ENV REACT_APP_BACKEND_URL $REACT_APP_BACKEND_URL
 ENV PATH /app/node_modules/.bin:$PATH
 # install app dependencies
 COPY package.json ./
