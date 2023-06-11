@@ -57,6 +57,8 @@ services:
       dockerfile: Dockerfile
     image: inventory-ui:latest
     container_name: inventory-ui
+    environment:
+      REACT_APP_API_HOST: inventory-app
     ports:
       - "3000:3000"
     depends_on:
