@@ -1,7 +1,7 @@
 const PORT = "8000"
 const API_VERSION = 'api'
 // const HOST = `http://localhost:${PORT}/${API_VERSION}` // API host server url
-const HOST = `inventory-app:${PORT}/${API_VERSION}` // API host server url
+const HOST = `http://vitaliisili:${PORT}/${API_VERSION}` // API host server url
 
 export const API_GET_ALL_PRODUCTS = `${HOST}/products`
 export const API_GET_PRODUCT_BY_ID = `${HOST}/products/{0}`
