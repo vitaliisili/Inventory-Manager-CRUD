@@ -13,6 +13,7 @@
 
 ### Project Description:
 
+
 *The objective of this project is to develop a simple inventory management system for a store.
 The system will allow you to add products, remove products, update quantities, retrieve product
 information, and calculate the total value of the inventory. It involves creating classes to represent
