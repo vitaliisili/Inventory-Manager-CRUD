@@ -16,7 +16,7 @@ pipeline {
             steps {
 //                 sh 'echo "DATABASE_PASSWORD=${credentials('INV_POSTGRES_PASSWORD')}" > .env'
 //                 sh 'cat .env'
-                sh 'DATABASE_USERNAME=${DATABASE_USERNAME} DATABASE_PASSWORD=${DATABASE_PASSWORD} sudo docker-compose -f docker-compose-prod.yml up -d --build'
+                sh 'sudo .env docker-compose -f docker-compose-prod.yml up -d --build'
             }
         }
 
