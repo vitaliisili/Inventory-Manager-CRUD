@@ -5,7 +5,7 @@ pipeline {
         stage('Build'){
             environment {
                 DATABASE_PASSWORD = 'test'
-                DATABASE_USERNAME = 'test'
+                DATABASE_USERNAME = credentials('INV_POSTGRES_USERNAME')
                 DATABASE_NAME = 'test'
                 DATABASE_PORT = '5433'
                 DATABASE_HOSTNAME = 'postgres-db'
