@@ -14,9 +14,9 @@ pipeline {
                 REACT_APP_BACKEND_URL = 'http:localhost:8000'
             }
             steps {
-//                 sh 'echo "DATABASE_PASSWORD=${credentials('INV_POSTGRES_PASSWORD')}" > .env'
+                bash 'echo "DATABASE_PASSWORD=${credentials('INV_POSTGRES_PASSWORD')}" > .env'
 //                 sh 'cat .env'
-                sh 'sudo .env docker-compose -f docker-compose-prod.yml up -d --build'
+                sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
             }
         }
 
