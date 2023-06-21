@@ -14,13 +14,14 @@ pipeline {
                 REACT_APP_BACKEND_URL = 'http:localhost:8000'
             }
             steps {
-                sh 'sudo ${DATABASE_USERNAME} ${DATABASE_NAME} ${REACT_APP_BACKEND_URL} ${DATABASE_PASSWORD} ${DATABASE_PORT} ${DATABASE_HOSTNAME} ${PGADMIN_EMAIL} ${PGADMIN_PASSWORD} docker-compose -f docker-compose-prod.yml up -d --build'
+                echo 'DATABASE_PASSWORD=${credentials('INV_POSTGRES_PASSWORD')} > .env'
+                sh 'cat .env'
+                sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
             }
         }
 
         stage('Clear Containers') {
             steps {
-                echo "${env.DATABASE_NAME}"
                 sh 'sudo docker rmi $(sudo docker images -f "dangling=true" -q) &>/dev/null'
             }
         }
