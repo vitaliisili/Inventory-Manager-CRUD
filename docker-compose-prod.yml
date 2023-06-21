@@ -32,8 +32,8 @@ services:
       - 5001
     volumes:
       - pgadmin-data:/var/lib/pgadmin
-    depends_on:
-      - postgres-db
+#    depends_on:
+#      - postgres-db
 
   inventory-app:
     build:
