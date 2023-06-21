@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh 'export DATABASE_PASSWORD=${credentials('INV_POSTGRES_PASSWORD')}'
                 sh 'printenv'
-//                 sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
+                sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
             }
         }
 
