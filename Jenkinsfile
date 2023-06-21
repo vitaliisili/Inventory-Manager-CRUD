@@ -19,7 +19,8 @@ pipeline {
 
         stage('Build'){
             environment {
-                DATABASE_PASSWORD = credentials('INV_POSTGRES_PASSWORD')
+//                 DATABASE_PASSWORD = credentials('INV_POSTGRES_PASSWORD')
+                DATABASE_PASSWORD = 'test'
                 DATABASE_USERNAME = credentials('INV_POSTGRES_USERNAME')
                 DATABASE_NAME = credentials('INV_POSTGRES_DATABASE_NAME')
                 DATABASE_PORT = '5432'
