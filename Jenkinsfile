@@ -14,7 +14,7 @@ pipeline {
                 REACT_APP_BACKEND_URL = 'http:localhost:8000'
             }
             steps {
-                sh 'mkdir test_folder'
+                sh '$DATABASE_PORT'
                 sh 'ls -a'
 //                 sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
             }
