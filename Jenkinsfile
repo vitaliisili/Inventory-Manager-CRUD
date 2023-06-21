@@ -14,13 +14,13 @@ pipeline {
                 REACT_APP_BACKEND_URL = credentials('REACT_APP_BACKEND_URL')
             }
             steps {
-                sh 'docker-compose -f docker-compose-prod.yml up -d --build'
+                sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
             }
         }
 
         stage('Clear') {
             steps {
-                sh 'docker rmi $(sudo docker images -f "dangling=true" -q) &>/dev/null'
+                sh 'sudo docker rmi $(sudo docker images -f "dangling=true" -q) &>/dev/null'
             }
         }
     }
