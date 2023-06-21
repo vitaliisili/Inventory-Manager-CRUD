@@ -21,7 +21,8 @@ pipeline {
             environment {
 //                 DATABASE_PASSWORD = credentials('INV_POSTGRES_PASSWORD')
                 DATABASE_PASSWORD = 'test'
-                DATABASE_USERNAME = credentials('INV_POSTGRES_USERNAME')
+//                 DATABASE_USERNAME = credentials('INV_POSTGRES_USERNAME')
+                DATABASE_USERNAME = 'rolisangor'
                 DATABASE_NAME = credentials('INV_POSTGRES_DATABASE_NAME')
                 DATABASE_PORT = '5432'
                 DATABASE_HOSTNAME = 'postgres-db'
