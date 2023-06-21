@@ -1,22 +1,21 @@
 version: "3.6"
 
 services:
-  postgres-db:
-    container_name: "postgres"
-    image: postgres
-    environment:
-      POSTGRES_USER: $DATABASE_USERNAME
-      POSTGRES_PASSWORD: $DATABASE_PASSWORD
-      POSTGRES_DB: $DATABASE_NAME
-      # POSTGRES_PASSWORD_FILE: /run/secrets/db_password <-- alternative for POSTGRES_PASSWORD (to use with docker secrets)
-    ports:
-      - "5433:5432"
-    expose:
-      - 5433
-      - 5432
-    volumes:
-      - postgres-data:/var/lib/postgresql/data/
-    restart: always
+#  postgres-db:
+#    container_name: "postgres"
+#    image: postgres
+#    environment:
+#      POSTGRES_USER: $DATABASE_USERNAME
+#      POSTGRES_PASSWORD: $DATABASE_PASSWORD
+#      POSTGRES_DB: $DATABASE_NAME
+#      # POSTGRES_PASSWORD_FILE: /run/secrets/db_password <-- alternative for POSTGRES_PASSWORD (to use with docker secrets)
+#    ports:
+#      - "5433:5432"
+#    expose:
+#      - 5433
+#    volumes:
+#      - postgres-data:/var/lib/postgresql/data/
+#    restart: always
 
   pgadmin:
     container_name: "pgAdmin4"
@@ -42,8 +41,8 @@ services:
       dockerfile: Dockerfile
     image: inventory:latest
     container_name: inventory
-    depends_on:
-      - postgres-db
+#    depends_on:
+#      - postgres-db
     environment:
       DATABASE_PASSWORD: $DATABASE_PASSWORD
       DATABASE_USERNAME: $DATABASE_USERNAME
@@ -73,4 +72,4 @@ services:
 
 volumes:
   pgadmin-data:
-  postgres-data:
+#  postgres-data:
