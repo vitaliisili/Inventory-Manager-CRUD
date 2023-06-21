@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+//         stage('Clear Workspace') {
+//                 steps {
+//                     cleanWs()
+//                 }
+//             }
+
         stage('Build'){
             environment {
                 DATABASE_PASSWORD = credentials('IVENT_DATABASE_PASSWORD')
@@ -21,12 +27,6 @@ pipeline {
         stage('Clear Containers') {
             steps {
                 sh 'sudo docker rmi $(sudo docker images -f "dangling=true" -q) &>/dev/null'
-            }
-        }
-
-        stage('Clear Workspace') {
-            steps {
-                cleanWs()
             }
         }
     }
