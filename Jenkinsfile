@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Clean workspace'){
+            steps {
+                cleanWs()
+            }
+        }
+
         stage('Build'){
             environment {
                 DATABASE_PASSWORD = credentials('INV_POSTGRES_PASSWORD')
@@ -30,11 +36,6 @@ pipeline {
             steps {
                 sh 'sudo docker rmi $(sudo docker images -f "dangling=true" -q) &>/dev/null'
             }
-        }
-    }
-    post {
-        always {
-            cleanWs()
         }
     }
 }
