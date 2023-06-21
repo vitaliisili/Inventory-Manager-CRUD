@@ -1,10 +1,19 @@
 pipeline {
     agent any
-
+    options {
+        skipDefaultCheckout(true)
+    }
     stages {
         stage('Clean workspace'){
             steps {
                 cleanWs()
+            }
+        }
+
+        stage('Checkout'){
+            steps {
+                checkout scm
+                echo "Building ${env.JOB_NAME}..."
             }
         }
 
