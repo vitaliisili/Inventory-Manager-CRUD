@@ -14,8 +14,7 @@ pipeline {
                 REACT_APP_BACKEND_URL = 'http:localhost:8000'
             }
             steps {
-                sh 'cat .env'
-                sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
+                sh 'sudo ${DATABASE_USERNAME} ${DATABASE_NAME} ${REACT_APP_BACKEND_URL} ${DATABASE_PASSWORD} ${DATABASE_PORT} ${DATABASE_HOSTNAME} ${PGADMIN_EMAIL} ${PGADMIN_PASSWORD} docker-compose -f docker-compose-prod.yml up -d --build'
             }
         }
 
