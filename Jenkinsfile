@@ -15,7 +15,13 @@ pipeline {
             }
             steps {
                 sh 'echo DATABASE_PORT=$DATABASE_PORT > .env'
-                sh 'ls -a'
+                sh 'echo DATABASE_USERNAME=DATABASE_USERNAME >> .env'
+                sh 'echo DATABASE_NAME=DATABASE_NAME >> .env'
+                sh 'echo DATABASE_PASSWORD=DATABASE_PASSWORD >> .env'
+                sh 'echo DATABASE_HOSTNAME=DATABASE_HOSTNAME >> .env'
+                sh 'echo PGADMIN_EMAIL=PGADMIN_EMAIL >> .env'
+                sh 'echo PGADMIN_PASSWORD=PGADMIN_PASSWORD >> .env'
+                sh 'echo REACT_APP_BACKEND_URL=REACT_APP_BACKEND_URL >> .env'
                 sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
             }
         }
