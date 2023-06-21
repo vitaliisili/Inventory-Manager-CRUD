@@ -14,7 +14,7 @@ pipeline {
                 REACT_APP_BACKEND_URL = 'http:localhost:8000'
             }
             steps {
-                bash 'export DATABASE_PASSWORD=${credentials('INV_POSTGRES_PASSWORD')}'
+//                 bash 'export DATABASE_PASSWORD=${credentials('INV_POSTGRES_PASSWORD')}'
                 sh 'printenv'
                 sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
             }
