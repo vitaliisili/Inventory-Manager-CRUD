@@ -14,15 +14,16 @@ pipeline {
                 REACT_APP_BACKEND_URL = 'http:localhost:8000'
             }
             steps {
-                sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
+                sh "env | sort"
+//                 sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
             }
         }
 
-        stage('Clear Containers') {
-            steps {
-                echo "${env.DATABASE_NAME}"
-                sh 'sudo docker rmi $(sudo docker images -f "dangling=true" -q) &>/dev/null'
-            }
-        }
+//         stage('Clear Containers') {
+//             steps {
+//                 echo "${env.DATABASE_NAME}"
+//                 sh 'sudo docker rmi $(sudo docker images -f "dangling=true" -q) &>/dev/null'
+//             }
+//         }
     }
 }
