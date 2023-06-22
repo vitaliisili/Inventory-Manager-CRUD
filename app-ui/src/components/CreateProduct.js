@@ -99,7 +99,6 @@ const CreateProduct = () => {
                 quantity
             }
         }).then(response => {
-            console.log(response.data)
             setError(false)
             setModal(true)
             closeModal(5)
