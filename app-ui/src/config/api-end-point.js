@@ -1,6 +1,6 @@
 const API_VERSION = 'api'
 // const BACKEND_URL = process.env.REACT_APP_BACKEND_URL
-const BACKEND_URL = 'http://localhost:8000'
+const BACKEND_URL = 'inventory-app:8000'
 const HOST = `${BACKEND_URL}/${API_VERSION}` // API host server url
 
 export const API_GET_ALL_PRODUCTS = `${HOST}/products`
