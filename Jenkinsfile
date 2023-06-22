@@ -26,7 +26,7 @@ pipeline {
                 DATABASE_HOSTNAME = credentials('INV_DATABASE_HOSTNAME')
                 PGADMIN_EMAIL = credentials('INV_PGADMIN_EMAIL')
                 PGADMIN_PASSWORD = credentials('INV_PGADMIN_PASSWORD')
-                REACT_APP_BACKEND_URL = 'http:localhost:8000'
+                REACT_APP_BACKEND_URL = 'http://localhost:8000'
             }
             steps {
                 sh 'echo DATABASE_PORT=$DATABASE_PORT > .env'
