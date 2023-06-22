@@ -294,7 +294,7 @@ const ProductsTable = () => {
                             <BiSearchAlt2 className="product-search-icon"/>
                         </div>
                     </div>
-                    <button className="btn-add"><Link to="/products/new">Add new</Link></button>
+                    <Link to="/products/new"><button className="btn-add">Add new</button></Link>
                 </div>
                 <div className="product-table">
                     <div className="product-table-row">
