@@ -18,7 +18,7 @@
 The system will allow you to add products, remove products, update quantities, retrieve product
 information, and calculate the total value of the inventory. It involves creating classes to represent
 products and an inventory manager to handle product operations. You will implement unit tests using the
-unittest module and mock external dependencies for testing.*
+unittest module and mock external dependencies for testing*
 
 ### Requirements
 
