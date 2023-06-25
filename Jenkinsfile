@@ -23,6 +23,7 @@ pipeline {
                 DATABASE_USERNAME = credentials('INV_POSTGRES_USERNAME')
                 DATABASE_NAME = credentials('INV_POSTGRES_DATABASE_NAME')
                 DATABASE_PORT = '5432'
+                DATABASE_PORT_TEST = '5444'
                 DATABASE_HOSTNAME = credentials('INV_DATABASE_HOSTNAME')
                 PGADMIN_EMAIL = credentials('INV_PGADMIN_EMAIL')
                 PGADMIN_PASSWORD = credentials('INV_PGADMIN_PASSWORD')
@@ -30,6 +31,7 @@ pipeline {
             }
             steps {
                 sh 'echo DATABASE_PORT=$DATABASE_PORT > .env'
+                sh 'echo DATABASE_PORT_TEST=$DATABASE_PORT_TEST > .env'
                 sh 'echo DATABASE_USERNAME=$DATABASE_USERNAME >> .env'
                 sh 'echo DATABASE_NAME=$DATABASE_NAME >> .env'
                 sh 'echo DATABASE_PASSWORD=$DATABASE_PASSWORD >> .env'
