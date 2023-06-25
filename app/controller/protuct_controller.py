@@ -69,7 +69,7 @@ async def delete_product(id: int, db: Session = Depends(get_db)):
 async def update_product(updated_product: product_schemas.ProductBase, id: int, db: Session = Depends(get_db)):
     product_query = db.query(product_model.Product).filter(product_model.Product.id == id)
     if not product_query.first():
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"product with id:{id} not found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"product with id: {id} not found")
     product_query.update(updated_product.dict(), synchronize_session=False)
     db.commit()
     return product_query.first()
