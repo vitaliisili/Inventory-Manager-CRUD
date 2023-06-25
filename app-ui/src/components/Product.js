@@ -5,6 +5,7 @@ import {useParams, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {API_GET_PRODUCT_BY_ID} from "../config/api-end-point";
+import {convertDate} from "../service/utils";
 
 const StyledProduct = styled.div`
   padding: 20px;
@@ -78,30 +79,32 @@ const Product = () => {
         <AppContainer>
             <StyledProduct>
                 <h1 className="page-title">Product Info</h1>
-                <div className="product-info-wrapper">
-                    <div className="product-info-row">
-                        <div className="product-info-column">
-                            <div className="product-info product-info-name">Product Name: <span className="product-info-text">Spice - Peppercorn Melange</span></div>
+                {data &&
+                    <div className="product-info-wrapper">
+                        <div className="product-info-row">
+                            <div className="product-info-column">
+                                <div className="product-info product-info-name">Product Name: <span className="product-info-text">{data.name}</span></div>
+                            </div>
+                            <div className="product-info-column">
+                                <div className="product-info product-info-date">Product Date: <span className="product-info-text">{convertDate(data.created_at)}</span></div>
+                            </div>
                         </div>
-                        <div className="product-info-column">
-                            <div className="product-info product-info-date">Product Date: <span className="product-info-text">5-23-2023</span></div>
+                        <div className="product-info-row">
+                            <div className="product-info-column">
+                                <div className="product-info product-info-quantity">Product Quantity: <span className="product-info-text">{data.quantity}</span></div>
+                            </div>
+                            <div className="product-info-column">
+                                <div className="product-info product-info-price">Product Price: <span className="product-info-text">{data.price}</span></div>
+                            </div>
+                        </div>
+                        <div className="product-info-row">
+                            <div className="product-info-column"></div>
+                            <div className="product-info-column">
+                                <div className="product-info product-info-total_price">Product Total Value: <span className="product-info-text">{(data.price * data.quantity).toFixed(2)}</span></div>
+                            </div>
                         </div>
                     </div>
-                    <div className="product-info-row">
-                        <div className="product-info-column">
-                            <div className="product-info product-info-quantity">Product Quantity: <span className="product-info-text">39</span></div>
-                        </div>
-                        <div className="product-info-column">
-                            <div className="product-info product-info-price">Product Price: <span className="product-info-text">323.99</span></div>
-                        </div>
-                    </div>
-                    <div className="product-info-row">
-                        <div className="product-info-column"></div>
-                        <div className="product-info-column">
-                            <div className="product-info product-info-total_price">Product Total Value: <span className="product-info-text">324424.34</span></div>
-                        </div>
-                    </div>
-                </div>
+                }
             </StyledProduct>
         </AppContainer>
     )
