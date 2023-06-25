@@ -56,27 +56,51 @@ cd Inventory-Manager_CRUD
 docker-compose -f docker-compose-local.yml up -d
 ```
 
-6. Run Python `uvicorn server`
+6. Create `.env` file in root directory
 ```bash
-uvicorn app.main:app -reload 
+nano .env 
 ```
-7. Open new tab in terminal
 
-8. Go to folder `app-ui`
+7. Copy next data to the `.env` file and save:
+```python
+DATABASE_PASSWORD=root
+DATABASE_USERNAME=postgres
+DATABASE_HOSTNAME=localhost
+DATABASE_PORT=5432
+DATABASE_PORT_TEST=5444
+DATABASE_NAME=inventory
+```
+
+8. Run Python `uvicorn server`
+```bash
+uvicorn app.main:app --reload 
+```
+
+#### Backend is ready, next run react application
+
+1. Open new tab in terminal
+
+2. Go to folder `app-ui`
 ```bash
 cd app-ui 
 ```
 
-9. Install required packages from `package.json` run command below
+3. Create `.env` file in `app-ui` directory and copy next data to file
+```python
+REACT_APP_BACKEND_URL=http://localhost:8000
+```
+
+4. Install required packages from `package.json` run command below
 ```bash
 npm install
 ```
 
-10. Start react application run
+5. Start react application
 ```bash
 npm run start
 ```
-11. Browser will open automatically on http://localhost:3000
+
+6. Browser will open automatically on http://localhost:3000
 
 ### Our postgres database is empty, to populate database follow next instruction:
 - Open http://localhost:5000 pgadmin interface
@@ -124,9 +148,26 @@ git clone https://github.com/vitaliisili/Inventory-Manager-CRUD.git
 cd Inventory-Manager_CRUD
 ```
 
-3. Build images and run all containers
+3. In root directory create `.env` file and copy next data to it:
+```python
+DATABASE_PASSWORD=root
+DATABASE_USERNAME=postgres
+DATABASE_HOSTNAME=postgres-db
+DATABASE_PORT=5432
+DATABASE_PORT_TEST=5444
+DATABASE_NAME=inventory
+```
+
+4. In `app-ui` directory create `.env` file and copy next data to it:
+```python
+REACT_APP_BACKEND_URL=http://localhost:8000
+```
+
+5. Build images and run all containers. From root directory run:
 ```bash
 docker-compose -f docker-compose-dev.yml up -d --build
 ```
 
-4. How to populate database look at instruction above 
+6. Open in browser [http://localhost:3000](`http://localhost:3000`)
+
+6. How to populate database look at instruction above 
