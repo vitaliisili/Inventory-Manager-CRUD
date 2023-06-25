@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     database_username: str
     database_hostname: str
     database_port: str
-    database_port_test: str
+    # database_port_test: str
     database_name: str
 
     class Config:
