@@ -1,4 +1,7 @@
+from pathlib import Path
 from pydantic import BaseSettings
+
+env_location = Path("./.env").resolve()
 
 
 class Settings(BaseSettings):
@@ -10,7 +13,7 @@ class Settings(BaseSettings):
     database_name: str
 
     class Config:
-        env_file = ".env"
+        env_file = env_location
 
 
 settings = Settings()
