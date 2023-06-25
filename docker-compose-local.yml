@@ -17,6 +17,20 @@ services:
       - postgres-data:/var/lib/postgresql/data/
     restart: on-failure
 
+  postgres-db_test:
+    container_name: "postgres_test"
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: inventory_test
+      # POSTGRES_PASSWORD_FILE: /run/secrets/db_password <-- alternative for POSTGRES_PASSWORD (to use with docker secrets)
+    ports:
+      - "5444:5432"
+    expose:
+      - 5444
+    restart: on-failure
+
   pgadmin:
     container_name: "pgAdmin4"
     image: dpage/pgadmin4
