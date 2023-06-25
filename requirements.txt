@@ -5,3 +5,4 @@ psycopg2-binary~=2.9.6
 uvicorn==0.22.0
 pydantic[dotenv]
 pytest~=7.3.2
+python-dotenv~=1.0.0
