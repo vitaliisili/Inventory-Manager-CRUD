@@ -31,7 +31,7 @@ pipeline {
             }
             steps {
                 sh 'echo DATABASE_PORT=$DATABASE_PORT > .env'
-                sh 'echo DATABASE_PORT_TEST=$DATABASE_PORT_TEST > .env'
+                sh 'echo DATABASE_PORT_TEST=$DATABASE_PORT_TEST >> .env'
                 sh 'echo DATABASE_USERNAME=$DATABASE_USERNAME >> .env'
                 sh 'echo DATABASE_NAME=$DATABASE_NAME >> .env'
                 sh 'echo DATABASE_PASSWORD=$DATABASE_PASSWORD >> .env'
