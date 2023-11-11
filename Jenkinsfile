@@ -24,8 +24,8 @@ pipeline {
                 DATABASE_NAME = credentials('INV_POSTGRES_DATABASE_NAME')
                 DATABASE_PORT = '5432'
                 DATABASE_HOSTNAME = credentials('INV_DATABASE_HOSTNAME')
-                PGADMIN_EMAIL = credentials('INV_PGADMIN_EMAIL')
-                PGADMIN_PASSWORD = credentials('INV_PGADMIN_PASSWORD')
+//                 PGADMIN_EMAIL = credentials('INV_PGADMIN_EMAIL')
+//                 PGADMIN_PASSWORD = credentials('INV_PGADMIN_PASSWORD')
                 REACT_APP_BACKEND_URL = 'https://inventoryapi.vitaliisili.com'
             }
             steps {
@@ -34,8 +34,8 @@ pipeline {
                 sh 'echo DATABASE_NAME=$DATABASE_NAME >> .env'
                 sh 'echo DATABASE_PASSWORD=$DATABASE_PASSWORD >> .env'
                 sh 'echo DATABASE_HOSTNAME=$DATABASE_HOSTNAME >> .env'
-                sh 'echo PGADMIN_EMAIL=$PGADMIN_EMAIL >> .env'
-                sh 'echo PGADMIN_PASSWORD=$PGADMIN_PASSWORD >> .env'
+//                 sh 'echo PGADMIN_EMAIL=$PGADMIN_EMAIL >> .env'
+//                 sh 'echo PGADMIN_PASSWORD=$PGADMIN_PASSWORD >> .env'
                 sh 'echo REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL >> .env'
                 sh 'cat .env'
                 sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'

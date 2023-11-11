@@ -1,9 +1,4 @@
-from pathlib import Path
 from pydantic import BaseSettings
-from dotenv import load_dotenv
-
-load_dotenv()
-# env_location = Path("./.env").resolve()
 
 
 class Settings(BaseSettings):

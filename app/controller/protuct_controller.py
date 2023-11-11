@@ -11,7 +11,7 @@ router = APIRouter(tags=['Products'])
 
 
 @router.get("/api/products", response_model=List[product_schemas.Product])
-async def get_products(page: int = 1, size: int = 0, search: Optional[str] = "", db: Session = Depends(get_db)):
+async def get_products(page: int = 2, size: int = 10, search: Optional[str] = "", db: Session = Depends(get_db)):
     products = db.query(product_model.Product) \
         .order_by(desc(product_model.Product.id)) \
         .filter(product_model.Product.name.contains(search)) \
