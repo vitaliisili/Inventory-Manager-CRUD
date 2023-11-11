@@ -38,7 +38,7 @@ pipeline {
 //                 sh 'echo PGADMIN_PASSWORD=$PGADMIN_PASSWORD >> .env'
                 sh 'echo REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL >> .env'
                 sh 'cat .env'
-                sh 'sudo docker-compose -f docker-compose-prod.yml up -d --build'
+                sh 'sudo docker compose -f docker-compose-prod.yml up -d --build'
             }
         }
 
